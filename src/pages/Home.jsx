@@ -16,7 +16,7 @@ const Home = () => {
     const fetchData = async () => {
       
       try {
-        const res = await axios.get(`posts${cat}`);
+        const res = await axios.get(`/posts${cat}`);
         console.log(res.data[0].descr);
         setPosts(res.data);
       } catch (err) {
