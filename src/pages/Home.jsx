@@ -17,7 +17,7 @@ const Home = () => {
       
       try {
         const res = await axios.get(`https://blogapp-backend-qext.onrender.com/api/posts${cat}`);
-        console.log(res);
+        console.log(res.data[0].descr);
         setPosts(res.data);
       } catch (err) {
         console.log(err);
@@ -76,7 +76,7 @@ const Home = () => {
             <div className="content">
               <Link className="linkPost" to={`/post/${post.id}`}>
                 <h1>{post.title}</h1>
-              <p style = {{marginTop : 20, marginBottom : 30,color: "gray" }}>{getText(post.desc)}</p>
+              <p style = {{marginTop : 20, marginBottom : 30,color: "gray" }}>{getText(post.descr)}</p>
               <button>Read More</button>
               </Link>
             </div>

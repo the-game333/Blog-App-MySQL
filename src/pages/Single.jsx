@@ -74,7 +74,7 @@ console.log(postId+"postid");
         <h1>{post.title}</h1>
         <p
           dangerouslySetInnerHTML={{
-            __html: DOMPurify.sanitize(post.desc),
+            __html: DOMPurify.sanitize(post.descr),
           }}
         ></p>      </div>
       <Menu cat={post.cat}/>

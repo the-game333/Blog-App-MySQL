@@ -7,7 +7,7 @@ import moment from "moment";
 
 const Write = () => {
   const state = useLocation().state;
-  const [value, setValue] = useState(state?.desc || "");
+  const [value, setValue] = useState(state?.descr || "");
   const [title, setTitle] = useState(state?.title || "");
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState(state?.cat || "");
@@ -32,14 +32,14 @@ const Write = () => {
     try {
       state ? await axios.put(`https://blogapp-backend-qext.onrender.com/api/posts/${state.id}`, {
         title,
-        desc: value,
+        descr: value,
         cat,
         img: file ? imgUrl : "",
       })
 
         : await axios.post(`https://blogapp-backend-qext.onrender.com/api/posts/`, {
           title,
-          desc: value,
+          descr: value,
           cat,
           img: file ? imgUrl : "",
           date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
