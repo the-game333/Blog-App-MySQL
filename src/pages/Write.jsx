@@ -26,7 +26,7 @@ const Write = () => {
   };
 
   const handleClick = async (e) => {
-    // e.preventDefault();
+     e.preventDefault();
     const imgUrl = await upload();
 
     try {
@@ -34,11 +34,7 @@ const Write = () => {
         title,
         descr: value,
         cat,
-        img: file ? imgUrl : "",
-        headers: {
-          'cookie': cookie,
-          'Content-Type': 'application/json'
-        }
+        img: file ? imgUrl : ""
       })
 
         : await axios.post(`https://blogapp-backend-qext.onrender.com/api/posts/`, {
@@ -46,11 +42,7 @@ const Write = () => {
           descr: value,
           cat,
           img: file ? imgUrl : "",
-          date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
-          headers: {
-            'cookie': cookie,
-            'Content-Type': 'application/json'
-          }
+          date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
         });
       navigate("/");
     } catch (err) {
