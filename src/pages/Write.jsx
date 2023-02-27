@@ -34,7 +34,11 @@ const Write = () => {
         title,
         descr: value,
         cat,
-        img: file ? imgUrl : ""
+        img: file ? imgUrl : "",
+        headers: {
+          'cookie': cookie,
+          'Content-Type': 'application/json'
+        }
       })
 
         : await axios.post(`https://blogapp-backend-qext.onrender.com/api/posts/`, {
@@ -43,6 +47,10 @@ const Write = () => {
           cat,
           img: file ? imgUrl : "",
           date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
+          headers: {
+            'cookie': cookie,
+            'Content-Type': 'application/json'
+          }
         });
       navigate("/");
     } catch (err) {
