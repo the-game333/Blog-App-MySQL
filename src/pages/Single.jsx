@@ -23,7 +23,7 @@ console.log(postId+"postid");
     const fetchData = async () => {
       try {
         console.log("inside try catch");
-        const res = await axios.get(`/posts/${postId}`);
+        const res = await axios.get(`https://blogapp-backend-qext.onrender.com/api/posts/${postId}`);
         console.log(res.data+"resultttt");
         setPost(res.data);
       } catch (err) {
@@ -35,7 +35,7 @@ console.log(postId+"postid");
 
   const handleDelete = async ()=>{
     try {
-      await axios.delete(`/posts/${postId}`);
+      await axios.delete(`https://blogapp-backend-qext.onrender.com/api/posts/${postId}`);
       navigate("/")
     } catch (err) {
       console.log(err);
