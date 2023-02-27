@@ -62,7 +62,7 @@ const Home = () => {
 
     <div className="home">
        <Tippy placement="bottom" content="follow on Twitter">
-        <a  style = {{marginRight:28,marginLeft:20, color: "gray" }} ><i className="fab fa-twitter fa-2x second"></i></a>
+        <a  style = {{marginRight:28, color: "gray" }} ><i className="fab fa-twitter fa-2x second"></i></a>
       </Tippy>
       <Tippy placement="bottom" content="follow on Facebook">
         <a  style = {{marginRight:40, color: "gray" }} ><i className="fab fa-facebook fa-2x first"></i></a>
