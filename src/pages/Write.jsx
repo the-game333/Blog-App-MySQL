@@ -18,7 +18,7 @@ const Write = () => {
     try {
       const formData = new FormData();
       formData.append("file", state?.img || file);
-      const res = await axios.post("https://blogapp-backend-qext.onrender.com/api/upload", formData);
+      const res = await axios.post("/upload", formData);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -26,7 +26,7 @@ const Write = () => {
   };
 
   const handleClick = async (e) => {
-   // e.preventDefault();
+    // e.preventDefault();
     const imgUrl = await upload();
 
     try {
@@ -34,7 +34,7 @@ const Write = () => {
         title,
         descr: value,
         cat,
-        img: file ? imgUrl : "",
+        img: file ? imgUrl : ""
       })
 
         : await axios.post(`https://blogapp-backend-qext.onrender.com/api/posts/`, {
@@ -42,9 +42,9 @@ const Write = () => {
           descr: value,
           cat,
           img: file ? imgUrl : "",
-          date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
+          date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
         });
-        navigate("/");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
