@@ -26,7 +26,7 @@ const Write = () => {
   };
 
   const handleClick = async (e) => {
-    e.preventDefault();
+   // e.preventDefault();
     const imgUrl = await upload();
 
     try {

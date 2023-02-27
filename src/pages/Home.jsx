@@ -17,7 +17,7 @@ const Home = () => {
       
       try {
         const res = await axios.get(`https://blogapp-backend-qext.onrender.com/api/posts${cat}`);
-        console.log(res.data[0].descr);
+       // console.log(res.data[0].descr);
         setPosts(res.data);
       } catch (err) {
         console.log(err);
