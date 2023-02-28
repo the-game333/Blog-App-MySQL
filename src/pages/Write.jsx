@@ -27,23 +27,23 @@ const Write = () => {
 
   const handleClick = async (e) => {
      e.preventDefault();
-   // const imgUrl = await upload();
+    const imgUrl = await upload();
 
     try {
       state ? await axios.put(`https://blogapp-backend-qext.onrender.com/api/posts/${state.id}`, {
         title,
         descr: value,
         cat,
-        img: ""
        // img: file ? imgUrl : ""
+       img: imgUrl ? imgUrl : ""
       })
 
-        : await axios.post(`https://blogapp-backend-qext.onrender.com/api/posts/`, {
+        : await axios.post("https://blogapp-backend-qext.onrender.com/api/posts/", {
           title,
           descr: value,
           cat,
-         img:"",
-          //img: file ? imgUrl : "",
+        //  img: file ? imgUrl : ""
+          img: imgUrl ? imgUrl : "",
           date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
         });
       navigate("/");
