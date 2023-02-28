@@ -10,7 +10,7 @@ export const AuthContexProvider = ({ children }) => {
 
   const login = async (inputs) => {
     console.log(inputs);
-    const res = await axios.post("https://blogapp-backend-qext.onrender.com/api/auth/login", inputs);
+    const res = await axios.post("https://blogapp-backend-qext.onrender.com/api/auth/login", inputs, header('Content-Type: application/json'));
     setCurrentUser(res.data);
   };
 
